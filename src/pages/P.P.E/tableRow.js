@@ -4,7 +4,7 @@ import { toAbsoluteUrl } from "helpers";
 
 function row(props) {
   return (
-    <tr key={props.id} >
+    <tr key={props.id} className="p-0" >
       <td className="  justify-content-center   align-middle p-0 m-0  border-right">
         {props.id}
       </td>

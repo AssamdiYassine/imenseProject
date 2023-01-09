@@ -4,7 +4,7 @@ import { toAbsoluteUrl } from "helpers";
 import SVG from "react-inlinesvg";
 function thead() {
   return (
-    <thead className="h-160px">
+    <thead className="h-160px p-0">
     <tr > 
       <th className="align-middle  border-right">
         <div className=" svg-icon svg-icon-sm  ">

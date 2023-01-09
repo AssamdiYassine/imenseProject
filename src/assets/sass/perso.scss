@@ -1,26 +1,33 @@
-.asideclient{
-    background-color: white;
-   >div{
-    >span{
-        color: gray  !important;
+.asideclient {
+  background-color: white;
+  > div {
+    > span {
+      color: gray !important;
     }
-   >h6{
-        color: gray !important;
+    > h6 {
+      color: gray !important;
     }
+  }
 }
-   } 
-.asideclient:hover{
-        background-color:#41A4DF;
-         
-    >div{
-        >span{
-            color: white !important;
-        }
-        >h6{
-            color: white !important;
-        }
+.asideclient:hover {
+  background-color: #41a4df;
+
+  > div {
+    > span {
+      color: white !important;
     }
-     }    
-       
-        
- 
+    > h6 {
+      color: white !important;
+    }
+  }
+}
+
+.ppetabel {
+  .table th,
+  .table td {
+    padding: 0px;
+  }
+}
+
+.table th, .table td {
+    padding: 0.25rem;}

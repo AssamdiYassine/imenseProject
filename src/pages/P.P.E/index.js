@@ -89,7 +89,7 @@ function index(props) {
       <NavBar text={'Overview'} logo={"/media/toggle.svg"}/>
       <SubHeader />
       {/*P.P.E Violations start  */}
-      <div className="container-fluid ">
+      <div className="container-fluid   ">
       
      
       <div className=" d-flex align-items-stretch justify-content-between  mt-10 ">
@@ -204,10 +204,10 @@ function index(props) {
       {/*P.P.E Violations end  */}
       {/*-------------------------- */}
       {/*P.P.E Violations table  */}
-      <div className="  pt-10">
+      <div className=" ppetabel  pt-10">
         <Table
           responsive="sm"
-          className="bg-white text-center align-star justify-content-center "
+          className="bg-white text-center align-star justify-content-center  ppetabel"
         >
           <Thead />
           <tbody>
