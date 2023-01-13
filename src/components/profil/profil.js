@@ -9,7 +9,7 @@ function Profil(props) {
         <>
           <div
             className=" offcanvas offcanvas-right p-5 offcanvas-on"
-            style={{ width: "28%" }}
+            style={{ width: "25%" }}
           >
             <div
               className="offcanvas-header d-flex align-items-center justify-content-end pb-5"
@@ -35,16 +35,16 @@ function Profil(props) {
                     href="#"
                     className="font-weight-bold font-size-h3 text-dark-75 text-hover-primary"
                   >
-                    Assamdi yassine
+                    SABER Imane
                   </a>
                   <div className="text-dark-75 font-weight-bolder font-size-h3 mt-1">
-                    assamdiyassine1@gmail.com
+                    saberimane663@gmail.com
                   </div>
                   <div className="navi mt-2  font-weight-bolder font-size-h3">
                     <a href="#" className="navi-item">
                       <span className="navi-link p-0 pb-2">
                         <span className="navi-text text-muted text-hover-primary">
-                          +2126 75269616
+                          +2126 45748699
                         </span>
                       </span>
                     </a>

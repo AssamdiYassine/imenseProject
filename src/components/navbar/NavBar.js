@@ -17,8 +17,8 @@ export function NavBar(props) {
   const {logo} = props;
   return (
     
-      <div id="kt_header" className="header header-fixed ">
-        <div className="container-fluid d-flex align-items-stretch justify-content-between my-4 ">
+      <div id="kt_header" className="header header-fixed header-menu-wrapper header-menu-wrapper-left">
+        <div className="container-fluid d-flex align-items-stretch justify-content-between">
           <div
             id="kt_header_menu_wrapper"
             className="header-menu-wrapper header-menu-wrapper-left"
@@ -42,7 +42,7 @@ export function NavBar(props) {
                   >
                     <div
                        
-                      className="myP font-weight-bold font-size-lg "
+                      className="myP font-weight-bold font-size-lg"
                     >
                     {props.text}
                      
@@ -54,17 +54,17 @@ export function NavBar(props) {
           </div>
           <div className="topbar align-items-center">
             <div className="px-4">
-              <div className="btn btn-icon w-auto btn-clean btn-lg px-2 ml-3">
+              <div className="btn btn-icon w-auto btn-clean d-flex align-items-center btn-lg px-2 ml-3">
                 <SVG src={toAbsoluteUrl("/media/A.svg")} />
               </div>
             </div>
             <div className="px-4">
-              <div className="btn btn-icon w-auto btn-clean btn-lg px-2 ml-3">
+              <div className="btn btn-icon w-auto btn-clean d-flex align-items-center btn-lg px-2 ml-3">
                 <SVG src={toAbsoluteUrl("/media/moon.svg")} />
               </div>
             </div>
             <div className="px-4">
-              <div className="btn btn-icon w-auto btn-clean btn-lg px-2 ml-3">
+              <div className="btn btn-icon w-auto btn-clean d-flex align-items-center btn-lg px-2 ml-3">
                 <SVG src={toAbsoluteUrl("/media/notif.svg")} />
               </div>
             </div>

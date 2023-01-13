@@ -58,9 +58,10 @@ function index() {
       <NavBar text={"Clients Management"} />
 
       {/*Clients Info start  */}
-      <div className="container-fluid d-flex align-items-stretch justify-content-between  mt-10 ">
+      
+      <div className="container-fluid d-flex align-items-stretch justify-content-between mt-10 ">
         <div className=" ">
-          <h3 className="text-dark">Clients Info</h3>
+          <h4 className="text-dark mt-2">Clients Info</h4>
         </div>
         <div className="d-flex">
           <Form inline className="m-0 ">
@@ -76,13 +77,13 @@ function index() {
               <FormControl
                 type="text"
                 placeholder="Search by id, name, status ..."
-                className="  inputSearch bg-white"
+                className=" mr-sm-2 inputSearch bg-white"
               />
             </InputGroup>
           </Form>
 
           <div>
-            <div className="px-3">
+            <div className="px-3 ">
               <DateRangePicker
                 initialSettings={{
                   startDate: startDate,
@@ -171,30 +172,31 @@ function index() {
               <option>...</option>
             </Form.Control>
           </div>
-          <div className=" btn btn-icon btn-clean   nav-link svg-icon p-0 m-0 svg-icon-3x mx-4">
+          <div className=" btn btn-icon btn-clean   nav-link svg-icon p-0 m-0 svg-icon-2x mx-4">
             <Image src={toAbsoluteUrl("/media/client/btn.png")} />
           </div>
-          <div className="  svg-icon svg-icon-3x  btn  nav-link m-0  p-0 btn-icon btn-clean ">
+          <div className="  svg-icon svg-icon-2x  btn  nav-link m-0  p-0 btn-icon btn-clean ">
             <Image src={toAbsoluteUrl("/media/client/Vector.png")} />
           </div>
         </div>
       </div>
+
       {/*Clients Info end  */}
-      <div className="container-fluid pt-10">
+      <div className="container-fluid pt-4">
         <Table
-          responsive="sm"
+          responsive 
           className="bg-white text-center align-star justify-content-center"
         >
-          <thead className="h-160px bg-info">
+          <thead className="h-170px bg-info">
             <tr>
-              <th className="align-middle text-white ">ID</th>
+              <th className="align-middle text-white  ">ID</th>
               <th className="align-middle text-white ">Suscription</th>
               <th className="align-middle text-white ">Client</th>
               <th className="align-middle text-white ">Contact Person</th>
               <th className="align-middle text-white ">Sites</th>
               <th className="align-middle text-white ">Subscription Type</th>
               <th className="align-middle text-white ">Next Bill</th>
-              <th className="align-middle text-white ">Phone</th>
+              <th className="align-middle text-white  ">Phone</th>
               <th className="align-middle text-white ">Email</th>
               <th className="align-middle text-white ">Status</th>
               <th className="align-middle text-white ">

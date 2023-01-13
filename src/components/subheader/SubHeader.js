@@ -7,8 +7,10 @@ import { NavLink } from "react-router-dom";
 export function SubHeader(props) {
   return (
     <>
-      <div id="kt_header" className="header header-fixed ">
-        <div className="container-fluid d-flex align-items-stretch justify-content-between  my-3 ">
+      <div id="kt_header" className="header header-fixed subheader py-2 py-lg-6 subheader-solid">
+        <div className="container-fluid d-flex align-items-stretch justify-content-between  flex-wrap flex-sm-nowrap ">
+          
+          
           <div
             id="kt_header_menu_wrapper"
             className="header-menu-wrapper header-menu-wrapper-left"

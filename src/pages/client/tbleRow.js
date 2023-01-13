@@ -23,14 +23,14 @@ function row(props) {
       <td className="align-middle ">
         <div className="d-flex  justify-content-center align-items-center ">
           <Image
-            width={"50px"}
+            width={"40px"}
             src={toAbsoluteUrl(`${props.ContactPerson.profil}`)}
           />
           <div className="d-flex  ml-3 my">
             <div>
-              <h3 className="p-0 m-0">{props.ContactPerson.name}</h3>
+              <h5 className="p-0 m-0">{props.ContactPerson.name}</h5>
 
-              <p className="p-0 m-0 text-left">{props.ContactPerson.post}</p>
+              <p className="p-0 m-0 text-left text-light-gray">{props.ContactPerson.post}</p>
             </div>
           </div>
         </div>
@@ -46,7 +46,7 @@ function row(props) {
       <td className="align-middle ">
         <div
           className="border px-5 py-3 border-info  text-info font-size-19"
-          style={{ borderRadius: 50, fontSize: 15 }}
+          style={{ borderRadius: 50, fontSize: 15,color:'#42A4DF' }}
         >
           {props.SubscriptionType}
         </div>
@@ -54,8 +54,8 @@ function row(props) {
       <td className="align-middle ">
         {props.NextBill.DAY > 10 ? (
           <div
-            className={`btn btn-success  text-white  font-size-19`}
-            style={{ borderRadius: 50, fontSize: 15 }}
+            className={`btn  text-white  font-size-19`}
+            style={{ borderRadius: 50, fontSize: 15 , backgroundColor:'#47CA5B'}}
           >
             {props.NextBill.DATE} <span className="px-2">.</span>
             {props.NextBill.DAY}
@@ -66,29 +66,30 @@ function row(props) {
             {
               (props.NextBill.DAY = 1 ? (
                 <div
-                  className={`btn btn-danger text-white  font-size-19`}
-                  style={{ borderRadius: 50, fontSize: 15 }}
+                  className={`btn  text-white  font-size-19`}
+                  style={{ borderRadius: 50, fontSize: 15 ,backgroundColor:'#F5B100'}}
                 >
                   {props.NextBill.DATE} <span className="px-2">.</span>
                   {props.NextBill.DAY}
                   <span className="px-2">Days Remaining</span>
                 </div>
-              ) : (
+              ) :  (props.NextBill.DAY < 10 &&  props.NextBill.DAY > 1 ? (
                 <div
-                  className={`btn btn-warning   text-white  font-size-19`}
-                  style={{ borderRadius: 50, fontSize: 15 }}
+                  className={`btn  text-white  font-size-19`}
+                  style={{ borderRadius: 50, fontSize: 15 ,backgroundColor:'#FF3838'}}
                 >
                   {props.NextBill.DATE} <span className="px-2">.</span>
                   {props.NextBill.DAY}
                   <span className="px-2">Days Remaining</span>
                 </div>
+              ):null
               ))
             }
           </>
         )}
       </td>
-      <td className="align-middle text-success "> {props.Phone}</td>
-      <td className="align-middle text-warning"> {props.Email}</td>
+      <td className="align-middle text-success "style={{color:'#47CA5B'}}> {props.Phone}</td>
+      <td className="align-middle" style={{color:'#FF772A'}}> {props.Email}</td>
       <td className="align-middle ">
         <Switch
         className=" bg-success"
