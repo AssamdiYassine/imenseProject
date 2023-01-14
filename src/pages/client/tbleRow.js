@@ -46,8 +46,9 @@ function row(props) {
       </td>
       <td className="align-middle  justify-content-center  ">
         <div
-          className="border px-2 py-2 m-auto"
-          style={{ borderRadius: 50, fontSize: 11,color:'#42A4DF',borderColor:'#42A4DF',width:"87px",height:"30px" }}
+          className="border px-2 py-2 m-auto border-2  border-info"
+          style={{ borderRadius: 50, fontSize: 11,color:'#42A4DF',borderColor:'#42A4DF',width:"87px",height:"30px",borderWidth:3,    borderColor: '#3699ff !important'
+        }}
         >
           {props.SubscriptionType}
         </div>

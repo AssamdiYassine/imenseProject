@@ -65,8 +65,8 @@ function index() {
         </div>
         <div className="d-flex">
           <Form inline className="m-0 ">
-            <InputGroup className="w-500px">
-              <InputGroup.Prepend>
+            <InputGroup className="w-400px">
+              <InputGroup.Prepend className="h-30px">
                 <InputGroup.Text
                   id="inputGroupPrepend"
                   className="iconSearch bg-white"
@@ -77,12 +77,12 @@ function index() {
               <FormControl
                 type="text"
                 placeholder="Search by id, name, status ..."
-                className=" mr-sm-2 inputSearch bg-white"
+                className=" mr-sm-2 inputSearch bg-white h-30px"
               />
             </InputGroup>
           </Form>
 
-          <div>
+          <div  className="  align-items-center  d-flex" >
             <div className="px-3 ">
               <DateRangePicker
                 initialSettings={{
@@ -146,38 +146,43 @@ function index() {
                 }}
                 onApply={(event, picker) => onApply(event, picker)}
               >
-                <button className="form-control  text-left">
+                <button className="form-control  text-left   h-30px py-1">
                   {startDate} - {endDate}
                 </button>
               </DateRangePicker>
             </div>
           </div>
-          <div>
+          <div  className="    align-items-center  d-flex" >
             <Form.Control
               as="select"
               defaultValue="All Contractors"
-              className="w-200px px-2"
+              className="w-200px px-2 py-0 h-30px  "
+              style={{color:'#8E8E8E'}}
             >
               <option>Subscription Type</option>
               <option>...</option>
             </Form.Control>
           </div>
-          <div>
+          <div className="d-flex align-items-center">
             <Form.Control
               as="select"
               defaultValue="All Contractors"
-              className="w-150px mx-2"
+              className="w-150px mx-2 py-0 h-30px  "
+              style={{color:'#8E8E8E'}}
             >
               <option>Status</option>
               <option>...</option>
             </Form.Control>
           </div>
-          <div className=" btn btn-icon btn-clean   nav-link svg-icon p-0 m-0 svg-icon-2x mx-4">
-            <Image src={toAbsoluteUrl("/media/client/btn.png")} />
+          <div className=" btn btn-icon btn-clean   nav-link svg-icon p-0 m-0   mx-2">
+            <Image src={toAbsoluteUrl("/media/client/btn.png")}  style={{width:'26px', height:'26px'}} />
           </div>
-          <div className="  svg-icon svg-icon-2x  btn  nav-link m-0  p-0 btn-icon btn-clean ">
+          <div className="d-flex align-items-center">
+          
+          
+          <div className=" btn btn-icon btn-clean   nav-link svg-icon svg-icon-2x p-0 m-0 " style={{width:'30px', height:'30px'}}>
             <Image src={toAbsoluteUrl("/media/client/Vector.png")} />
-          </div>
+          </div></div>
         </div>
       </div>
 
