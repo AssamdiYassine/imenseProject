@@ -94,12 +94,12 @@ function index(props) {
      
       <div className=" d-flex align-items-stretch justify-content-between  mt-10 ">
         <div className=" ">
-          <h3 className="text-muted ">P.P.E Violations Table</h3>
+          <h4 className="text-dark ">P.P.E Violations Table</h4>
         </div>
         <div className="d-flex">
           <Form inline className="m-0 ">
-            <InputGroup className="w-500px">
-              <InputGroup.Prepend>
+            <InputGroup className="w-400px ">
+              <InputGroup.Prepend className="h-30px">
                 <InputGroup.Text
                   id="inputGroupPrepend"
                   className="iconSearch bg-white"
@@ -110,14 +110,14 @@ function index(props) {
               <FormControl
                 type="text"
                 placeholder="Search workers ..."
-                className="  inputSearch bg-white"
+                className="  inputSearch bg-white h-30px"
               />
             </InputGroup>
           </Form>
 
-          <div>
-            <div className="px-3">
-              <DateRangePicker
+          <div className="  align-items-center  d-flex" >
+            <div className="px-3  ">
+              <DateRangePicker  
                 initialSettings={{
                   startDate: startDate,
                   endDate: endDate,
@@ -179,24 +179,24 @@ function index(props) {
                 }}
                 onApply={(event, picker) => onApply(event, picker)}
               >
-                <button className="form-control  text-left">
+                <button className="form-control  text-left h-30px py-1 ">
                   {startDate} - {endDate}
                 </button>
               </DateRangePicker>
             </div>
           </div>
-          <div>
+          <div className="    align-items-center  d-flex"  >
             <Form.Control
               as="select"
               defaultValue="All Contractors"
-              className="w-200px px-2"
+              className="w-200px px-2 py-0 h-30px"
             >
               <option>All Contractors.</option>
               <option>...</option>
             </Form.Control>
           </div>
-          <div className="w-30px svg-icon svg-icon-3x mx-4">
-            <SVG src={toAbsoluteUrl("/media/full.svg")} />
+          <div className="  pl-3 svg-icon   align-items-center  d-flex  ">
+            <SVG src={toAbsoluteUrl("/media/full.svg")} style={{width:'30px', height:'30px'}}/>
           </div>
         </div>
       </div>
@@ -204,10 +204,10 @@ function index(props) {
       {/*P.P.E Violations end  */}
       {/*-------------------------- */}
       {/*P.P.E Violations table  */}
-      <div className=" ppetabel  pt-10">
+      <div className=" ppetabel  pt-3">
         <Table
-          responsive="sm"
-          className="bg-white text-center align-star justify-content-center  ppetabel"
+          responsive
+          className=" rounded bg-white text-center align-star justify-content-center  ppetabel"
         >
           <Thead />
           <tbody>

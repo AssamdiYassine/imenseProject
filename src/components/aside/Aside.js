@@ -14,16 +14,16 @@ export function Aside(props) {
   return (
     <>
       {/* begin::Aside */}
-      <div id="kt_aside" className="aside bg-white aside-left d-flex aside-fixed border-right">
+      <div id="kt_aside" className="aside bg-white aside-left d-flex aside-fixed border-right   " style={{width:'63px'}}>
         {/* begin::Primary */}
-        <div className="aside-primary d-flex flex-column align-items-center flex-row-auto">
+        <div className="aside-primary d-flex flex-column align-items-center flex-row-auto   "  style={{width:'63px'}}>
 
         <Brand logo={'/media/logo/logo.svg'}/>  
          
           {/* begin::Nav Wrapper */}
           {/* Remove " flex-column-fluid "::To solve aside footer bottom padding */}
-          <div className="aside-nav d-flex flex-column align-items-center py-5 px-4 scrollA scrollA-pull">
-            <div className={`scrollA scrollA-pull overflow-auto `}>
+          <div className="aside-nav d-flex flex-column align-items-center py-5  w-63px">
+            <div className={`  overflow-auto `}>
               {/* begin::Nav */}
               <ul className="list-unstyled flex-column" role="tablist">
                 {/* begin::Item */}
@@ -87,9 +87,9 @@ function MyNavLink({ link, svg, txt }) {
         <NavLink
           to={`${link}`}
           activeClassName="active"
-          className="nav-link btn btn-icon btn-clean btn-lg"
+          className="nav-link btn btn-icon   btn-lg  asidebaricone"
         >
-          <span className="svg-icon svg-icon-lg">
+          <span className="svg-icon svg-icon-lg svg-hover-black">
             <SVG src={toAbsoluteUrl(svg)} />
           </span>
         </NavLink>

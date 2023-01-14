@@ -9,7 +9,7 @@ export function Brand({logo}) {
       {/* begin::Brand */}
       <div className={`aside-brand d-flex flex-column align-items-center flex-column-auto pb-10  pt-5 `}>
         {/* begin::Logo */}
-        <div className="brand-logo svg-icon svg-icon-4x ">
+        <div className="brand-logo  " style={{width:'34px'}}>
           
           <SVG src={toAbsoluteUrl(`${logo}`)} />
         </div>

@@ -32,3 +32,32 @@
 
 .table th, .table td {
     padding: 0.25rem;}
+
+
+
+
+
+    .asidebaricone{
+      span{
+        svg{
+          color: #42A4DF !important;
+        }
+
+      }   
+
+
+    }
+    .asidebaricone:hover {
+      span{
+        svg{
+           
+          rect{
+            color: #41a4df;
+            fill: #42A4DF !important;
+          }
+        }
+
+      }   
+
+
+    }
