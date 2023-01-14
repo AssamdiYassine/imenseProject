@@ -18,44 +18,45 @@ function row(props) {
       <td className="align-middle "> {props.id}</td>
       <td className="align-middle "> {props.Suscription}</td>
       <td className="align-middle ">
-        <Image width={"100%"} src={toAbsoluteUrl(`${props.Client}`)} />
+        <Image width={"114px"} src={toAbsoluteUrl(`${props.Client}`)} />
       </td>
       <td className="align-middle ">
         <div className="d-flex  justify-content-center align-items-center ">
           <Image
-            width={"40px"}
+            width={"34px"}
             src={toAbsoluteUrl(`${props.ContactPerson.profil}`)}
           />
-          <div className="d-flex  ml-3 my">
+          <div className="d-flex  ml-3 my" >
             <div>
-              <h5 className="p-0 m-0">{props.ContactPerson.name}</h5>
+              <h4 className="p-0 m-0" style={{ fontSize:12 , height:"15px"}} >{props.ContactPerson.name}</h4>
 
-              <p className="p-0 m-0 text-left text-light-gray">{props.ContactPerson.post}</p>
+              <p className="p-0 m-0 text-left "style={{ fontSize:11, height:"15px"}}>{props.ContactPerson.post}</p>
             </div>
           </div>
         </div>
       </td>
       <td className="align-middle ">
         <div className="d-flex">
-          <div className="  svg-icon svg-icon-2x">
+          <div className="  svg-icon svg-icon"style={{ width:'14px', height:'17px'}}>
             <SVG src={toAbsoluteUrl("/media/client/Vector.svg")} />
           </div>
-          {props.Sites}
+          <div className="ml-4">{props.Sites}</div>
+          
         </div>
       </td>
-      <td className="align-middle ">
+      <td className="align-middle  justify-content-center  ">
         <div
-          className="border px-5 py-3 border-info  text-info font-size-19"
-          style={{ borderRadius: 50, fontSize: 15,color:'#42A4DF' }}
+          className="border px-2 py-2 m-auto"
+          style={{ borderRadius: 50, fontSize: 11,color:'#42A4DF',borderColor:'#42A4DF',width:"87px",height:"30px" }}
         >
           {props.SubscriptionType}
         </div>
       </td>
-      <td className="align-middle ">
+      <td className="align-middle  ">
         {props.NextBill.DAY > 10 ? (
           <div
-            className={`btn  text-white  font-size-19`}
-            style={{ borderRadius: 50, fontSize: 15 , backgroundColor:'#47CA5B'}}
+            className={`btn px-3 py-1 text-white  `}
+            style={{ borderRadius: 50, fontSize: 11 , backgroundColor:'#47CA5B'}}
           >
             {props.NextBill.DATE} <span className="px-2">.</span>
             {props.NextBill.DAY}
@@ -66,8 +67,8 @@ function row(props) {
             {
               (props.NextBill.DAY = 1 ? (
                 <div
-                  className={`btn  text-white  font-size-19`}
-                  style={{ borderRadius: 50, fontSize: 15 ,backgroundColor:'#F5B100'}}
+                  className={`btn px-3 py-1 text-white  `}
+                  style={{ borderRadius: 50, fontSize: 11 ,backgroundColor:'#F5B100'}}
                 >
                   {props.NextBill.DATE} <span className="px-2">.</span>
                   {props.NextBill.DAY}
@@ -75,8 +76,8 @@ function row(props) {
                 </div>
               ) :  (props.NextBill.DAY < 10 &&  props.NextBill.DAY > 1 ? (
                 <div
-                  className={`btn  text-white  font-size-19`}
-                  style={{ borderRadius: 50, fontSize: 15 ,backgroundColor:'#FF3838'}}
+                  className={`btn px-3 py-1 text-white  `}
+                  style={{ borderRadius: 50, fontSize: 11 ,backgroundColor:'#FF3838'}}
                 >
                   {props.NextBill.DATE} <span className="px-2">.</span>
                   {props.NextBill.DAY}

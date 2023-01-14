@@ -14,13 +14,13 @@ export default function AsideClient(props) {
       {/* begin::Aside */}
       <div
         id="kt_aside"
-        className="aside bg-white aside-left d-flex aside-fixed border-right w-250px h-100"
+        className="aside bg-white aside-left d-flex aside-fixed border-right w-250px h-100 "
       >
         {/* begin::Primary */}
         <div className="aside-primary d-flex flex-column align-items-center flex-row-auto w-250px ">
-          <div className=" d-flex align-middle justify-content-between w-100 h-80px">
+          <div className=" d-flex align-middle justify-content-between w-100 h-60px">
             <div className="     pl-3 ">
-              <div className=" d-flex pt-5 ">
+              <div className=" d-flex pt-1 ">
                 <Image
                   src={toAbsoluteUrl("/media/logo/logo3.jpg")}
                   width={200}

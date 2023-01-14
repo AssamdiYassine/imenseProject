@@ -187,7 +187,7 @@ function index() {
           responsive 
           className="bg-white text-center align-star justify-content-center"
         >
-          <thead className="h-170px bg-info">
+          <thead className="h-170px "style={{background: "#42A4DF"}}>
             <tr>
               <th className="align-middle text-white  ">ID</th>
               <th className="align-middle text-white ">Suscription</th>

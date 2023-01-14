@@ -18,7 +18,7 @@ export function NavBar(props) {
   return (
     
       <div id="kt_header" className="header header-fixed header-menu-wrapper header-menu-wrapper-left">
-        <div className="container-fluid d-flex align-items-stretch justify-content-between">
+        <div className=" d-flex align-items-stretch justify-content-between py-1">
           <div
             id="kt_header_menu_wrapper"
             className="header-menu-wrapper header-menu-wrapper-left"
