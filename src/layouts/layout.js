@@ -61,7 +61,7 @@ class Layout extends Component {
       <>
       {routeName === "PPE" && (<>
         {/*begin::Main*/}
-        <HeaderMobile />
+        {/* <HeaderMobile /> */}
         <div className="d-flex flex-column flex-root">
           {/*begin::Page*/}
           <div className="d-flex flex-row flex-column-fluid page">

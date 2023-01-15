@@ -2,9 +2,7 @@ import React, { useState as UseState } from "react";
 
 import { toAbsoluteUrl } from "helpers";
 import SVG from "react-inlinesvg";
-
 import { Navbar, Nav } from "react-bootstrap";
-
 import Profil from "components/profil/profil";
 
 export function NavBar(props) {
@@ -19,27 +17,29 @@ export function NavBar(props) {
       id="kt_header"
       className="header header-fixed header-menu-wrapper header-menu-wrapper-left"
     >
-      <div className="container-fluid d-flex align-items-stretch justify-content-between">
+      <div className="d-flex align-items-stretch justify-content-between">
         <div
           id="kt_header_menu_wrapper"
           className="header-menu-wrapper header-menu-wrapper-left"
         >
           <Navbar className="parentNav p-0" bg="white" expand="lg">
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <div className=" svg-icon   m-auto" aria-controls="basic-navbar-nav">
+                  <SVG  src={toAbsoluteUrl(`${logo}`)} />
+                </div>
+            {/* <Navbar.Toggle aria-controls="basic-navbar-nav" /> */}
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="mr-auto d-flex align-items-center">
-                <div className=" svg-icon   m-auto">
-                  <SVG src={toAbsoluteUrl(`${logo}`)} />
-                </div>
-
-                <div activeClassName="active" className="ml-5 d-flex align-items-center">
+                <div activeClassName="active" className=" d-flex align-items-center">
                   <h6 className="myP font-weight-bold  " style={{fontSize :18}}>
                     {props.text}
                   </h6>
                 </div>
               </Nav>
+            
             </Navbar.Collapse>
+            
           </Navbar>
+
         </div>
         <div className="topbar align-items-center">
           <div className="">
