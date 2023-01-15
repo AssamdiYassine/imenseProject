@@ -92,13 +92,13 @@ function index(props) {
       <div className="container-fluid   ">
       
      
-      <div className=" d-flex align-items-stretch justify-content-between  mt-10 ">
-        <div className=" ">
+      <div className=" d-flex align-items-stretch justify-content-between  mt-10  row ">
+        <div className="col-md-2  col-sm-2">
           <h4 className="text-dark ">P.P.E Violations Table</h4>
         </div>
-        <div className="d-flex">
-          <Form inline className="m-0 ">
-            <InputGroup className="w-400px ">
+        <div className="d-flex col-md-10 col-sm-10  justify-content-end ">
+          <Form inline className="m-0 col-sm-3 p-0 col-md-5  justify-content-end ">
+            <InputGroup className="w-100 ">
               <InputGroup.Prepend className="h-30px">
                 <InputGroup.Text
                   id="inputGroupPrepend"
@@ -115,8 +115,8 @@ function index(props) {
             </InputGroup>
           </Form>
 
-          <div className="  align-items-center  d-flex" >
-            <div className="px-3  ">
+          <div className="  align-items-center  d-flex justify-content-end mx-3 ">
+            <div >
               <DateRangePicker  
                 initialSettings={{
                   startDate: startDate,
@@ -185,7 +185,7 @@ function index(props) {
               </DateRangePicker>
             </div>
           </div>
-          <div className="    align-items-center  d-flex"  >
+          <div className="    align-items-center  d-flex col-sm-3  p-0 col-md-2   "  >
             <Form.Control
               as="select"
               defaultValue="All Contractors"
@@ -195,9 +195,9 @@ function index(props) {
               <option>...</option>
             </Form.Control>
           </div>
-          <div className="  pl-3 svg-icon   align-items-center  d-flex  ">
+          <div className="  pl-3 svg-icon   align-items-center p-0 d-flex   ">
             <SVG src={toAbsoluteUrl("/media/full.svg")} style={{width:'30px', height:'30px'}}/>
-          </div>
+          </div> 
         </div>
       </div>
 
