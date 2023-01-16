@@ -11,12 +11,12 @@ import React from "react";
 function row(props) {
   return (
     <tr >
-      <td className="align-middle "> {props.id}</td>
-      <td className="align-middle "> {props.Suscription}</td>
-      <td className="align-middle ">
+      <td className="align-middle  flex-nowrap text-nowrap"> {props.id}</td>
+      <td className="align-middle flex-nowrap text-nowrap"> {props.Suscription}</td>
+      <td className="align-middle flex-nowrap text-nowrap">
         <Image width={"114px"} src={toAbsoluteUrl(`${props.Client}`)} />
       </td>
-      <td className="align-middle w-150px">
+      <td className="align-middle w-150px flex-nowrap text-nowrap">
         <div className="d-flex  justify-content-center align-items-center ">
           <Image
             width={"34px"}
@@ -38,7 +38,7 @@ function row(props) {
           </div>
         </div>
       </td>
-      <td className="align-middle ">
+      <td className="align-middle flex-nowrap text-nowrap">
         <div className="d-flex">
           <div
             className="  svg-icon svg-icon"
@@ -49,7 +49,7 @@ function row(props) {
           <div className="ml-4">{props.Sites}</div>
         </div>
       </td>
-      <td className="align-middle  justify-content-center  ">
+      <td className="align-middle  justify-content-center flex-nowrap text-nowrap  ">
         <div
           className="border px-2 py-2 m-auto border-2  border-info"
           style={{
@@ -66,7 +66,7 @@ function row(props) {
           {props.SubscriptionType}
         </div>
       </td>
-      <td className="align-middle  ">
+      <td className="align-middle  flex-nowrap text-nowrap">
         {props.NextBill.DAY > 10 ? (
           <div
             className={`btn px-3 py-1 text-white  `}
@@ -114,15 +114,15 @@ function row(props) {
           </>
         )}
       </td>
-      <td className="align-middle text-success " style={{ color: "#47CA5B" }}>
+      <td className="align-middle text-success flex-nowrap text-nowrap " style={{ color: "#47CA5B" }}>
         {" "}
         {props.Phone}
       </td>
-      <td className="align-middle" style={{ color: "#FF772A" }}>
+      <td className="align-middle flex-nowrap text-nowrap" style={{ color: "#FF772A" }}>
         {" "}
         {props.Email}
       </td>
-      <td className="align-middle ">
+      <td className="align-middle flex-nowrap text-nowrap ">
         <Switch
           className=" bg-success"
           checkedChildren={"Active"}
