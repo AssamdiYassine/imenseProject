@@ -4,9 +4,8 @@ import { withRouter } from "react-router-dom";
 import $ from "jquery";
 import "assets/sass/pages/login/login-4.scss";
 import { Aside } from "components/aside/Aside";
-import AsideClient from "components/aside/AsideClient";
  
- import { HeaderMobile } from "components/header-mobile/HeaderMobile";
+ 
 import { toAbsoluteUrl } from "helpers";
 class Layout extends Component {
   constructor(props) {
@@ -33,6 +32,7 @@ class Layout extends Component {
 
   render() {
     const { loading } = this.state;
+    
     const { children,  routeName} = this.props;
 
     if (loading) {
@@ -59,7 +59,7 @@ class Layout extends Component {
 
     return (
       <>
-      {routeName === "PPE" && (<>
+   <>
         {/*begin::Main*/}
         {/* <HeaderMobile /> */}
         <div className="d-flex flex-column flex-root">
@@ -91,39 +91,8 @@ class Layout extends Component {
           {/*end::Page*/}
         </div>
         </>
-    )}
-    {routeName === "client" && (<> 
-      <HeaderMobile />
-      <div className="d-flex flex-column flex-root">
-        {/*begin::Page*/}
-        <div className="d-flex flex-row flex-column-fluid page">
-          
-             <AsideClient/>
-          
-
-          {/*begin::Wrapper*/}
-          <div
-            className="d-flex flex-column flex-row-fluid wrapper"
-            id="kt_wrapper"
-          >
-            {/*begin::Content*/}
-            <div
-              id="kt_content"
-              className={`content d-flex flex-column flex-column-fluid pt-0 `}
-            >
-              
-              {children}
-              
-            </div>
-            {/*end::Content*/}
-          
-          </div>
-          {/*end::Wrapper*/}
-        </div>
-        {/*end::Page*/}
-      </div>
-      
-      </>)}
+   
+ 
       </>
     );
   }

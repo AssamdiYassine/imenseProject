@@ -11,20 +11,20 @@ export function NavBar(props) {
   const hide = (bool) => {
     setShow(bool);
   };
-  const { logo } = props;
+  const { logo ,handeIsOPEN } = props;
   return (
     <div
       id="kt_header"
-      className="header header-fixed header-menu-wrapper header-menu-wrapper-left"
+      className="header header-fixed header-menu-wrapper header-menu-wrapper-left "
     >
       <div className="d-flex align-items-stretch justify-content-between">
         <div
           id="kt_header_menu_wrapper"
-          className="header-menu-wrapper header-menu-wrapper-left"
+          className="header-menu-wrapper header-menu-wrapper-left d-flex"
         >
           <Navbar className="parentNav p-0" bg="white" expand="lg">
-          <div className=" svg-icon   m-auto" aria-controls="basic-navbar-nav">
-                  <SVG  src={toAbsoluteUrl(`${logo}`)} />
+          <div className=" svg-icon  d-flex  m-auto" aria-controls="basic-navbar-nav" onClick={()=> handeIsOPEN()}>
+                  <SVG  src={toAbsoluteUrl(`${logo}`)}  className=" d-flex ml-1 align-items-center my-auto"/>
                 </div>
             {/* <Navbar.Toggle aria-controls="basic-navbar-nav" /> */}
             <Navbar.Collapse id="basic-navbar-nav">

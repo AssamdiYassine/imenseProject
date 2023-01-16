@@ -1,76 +1,91 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
- 
+
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
-import React from "react";
+import React, { useState } from "react";
 import SVG from "react-inlinesvg";
 import { toAbsoluteUrl } from "helpers";
 import { Brand } from "components/brand/Brand";
-
+import Image from "react-bootstrap/Image";
 export function Aside(props) {
- 
- 
- 
+  const [isOpen, setOpen] = useState(true);
+  const handelIsOPEN = () => {
+    setOpen(!isOpen);
+  };
   return (
-    <>
-      {/* begin::Aside */}
-      <div id="kt_aside" className="aside bg-white aside-left d-flex aside-fixed border-right   " style={{width:'63px'}}>
-        {/* begin::Primary */}
-        <div className="aside-primary d-flex flex-column align-items-center flex-row-auto   "  style={{width:'63px'}}>
-
-        <Brand logo={'/media/logo/logo.svg'}/>  
-         
-          {/* begin::Nav Wrapper */}
-          {/* Remove " flex-column-fluid "::To solve aside footer bottom padding */}
-          <div className="aside-nav d-flex flex-column align-items-center py-5  w-63px">
-            <div className={`  overflow-auto `}>
-              {/* begin::Nav */}
-              <ul className="list-unstyled flex-column" role="tablist">
-                {/* begin::Item */}
-                <MyNavLink
-                  svg="/media/home.svg"
-                  txt={'home'}
-                  link="/home"
+    <div
+      id="kt_aside"
+      className={`aside bg-white aside-left d-flex aside-fixed border-right  ${
+        isOpen ? "w-250px h-100" : ""
+      } `}
+      style={{ width: "63px" }}
+    >
+      {/* begin::Primary */}
+      <div
+        className={`aside-primary d-flex flex-column align-items-center flex-row-auto    ${
+          isOpen ? "w-250px h-100" : ""
+        }  `}
+        style={{ width: "63px" }}
+      >
+        {isOpen ? (
+          <div className=" d-flex align-middle justify-content-between w-100 h-60px">
+            <div className="     pl-3 ">
+              <div className=" d-flex pt-1 ">
+                <Image
+                  src={toAbsoluteUrl("/media/logo/logo3.jpg")}
+                  width={200}
                 />
-                
-                <MyNavLink
-                  svg="/media/hand.svg"
-                  txt={'P.P.E Management'}
-                  link="/PPE"
-                />
-                <div className="aside-separator w-auto" />
-                <MyNavLink
-                  svg="/media/cloves.svg"
-                  txt={'cloves'}
-                  link=" "
-                />
-                <MyNavLink
-                svg="/media/jop.svg"
-                txt={'Contractors'}
-                link=" "
-              />
-              <MyNavLink
-              svg="/media/pers.svg"
-              txt={'Clients'}
-              link="/client"
-            />
-            
-              </ul>
+              </div>
             </div>
 
-            {/* end::Nav */}
+            <div
+              className=" svg-icon   my-auto pr-3"
+              onClick={() => handelIsOPEN()}
+            >
+              <SVG src={toAbsoluteUrl("/media/toggle.svg")} />
+            </div>
           </div>
-         
-          {/* end::Nav Wrapper */}
+        ) : (
+          <Brand logo={"/media/logo/logo.svg"} />
+        )}
+        {/* begin::Nav Wrapper */}
+        {/* Remove " flex-column-fluid "::To solve aside footer bottom padding */}
+        <div
+          className={`aside-nav d-flex flex-column align-items-center py-5  ${
+            isOpen ? "w-250px " : "w-63px"
+          } `}
+        >
+          <div className="w-75">
+            {/* begin::Nav */}
+            <ul className="list-unstyled flex-column" role="tablist">
+              {/* begin::Item */}
+              <MyNavLink
+                svg="/media/pers.svg"
+                txt={"Clients"}
+                link="/client"
+                isOpen={isOpen}
+              />
+
+              <MyNavLink
+                svg="/media/hand.svg"
+                txt={"P.P.E Management"}
+                link="/PPE"
+                isOpen={isOpen}
+              />
+            </ul>
+          </div>
+
+          {/* end::Nav */}
         </div>
-        {/* end::Primary */}
+
+        {/* end::Nav Wrapper */}
       </div>
-      {/* end::Aside */}
-    </>
+      {/* end::Primary */}
+    </div>
   );
 }
 
-function MyNavLink({ link, svg, txt }) {
+function MyNavLink({ link, svg, txt, isOpen }) {
   return (
     <li
       className="nav-item mb-3"
@@ -79,21 +94,35 @@ function MyNavLink({ link, svg, txt }) {
       data-container="body"
       data-boundary="window"
     >
-      <OverlayTrigger
-        placement="right"
-        overlay={<Tooltip id="latest-project">{txt}</Tooltip>}
-         
-      >
+    
         <NavLink
           to={`${link}`}
           activeClassName="active"
-          className="nav-link btn btn-icon   btn-lg  asidebaricone"
+          className={`nav-link btn btn-icon   btn-lg  w-100  ${
+            isOpen ? "asideclient justify-content-start " : ""
+          }`}
         >
-          <span className="svg-icon svg-icon-lg svg-hover-black">
-            <SVG src={toAbsoluteUrl(svg)} />
-          </span>
+
+          {isOpen ? (
+            <div className="d-flex flex-nowrap text-nowrap   ">
+              {" "}
+              <span className="svg-icon svg-icon-lg svg-hover-black">
+                <SVG src={toAbsoluteUrl(svg)} />
+              </span>
+              <span className="px-2 text-center">{txt}</span>{" "}
+            </div>
+          ) : (
+            <OverlayTrigger
+            placement="right"
+            overlay={<Tooltip id="latest-project">{txt}</Tooltip>}
+          >
+            <span className="svg-icon svg-icon-lg svg-hover-black">
+              <SVG src={toAbsoluteUrl(svg)} />
+            </span>
+            </OverlayTrigger>
+          )}
         </NavLink>
-      </OverlayTrigger>
+   
     </li>
   );
 }
