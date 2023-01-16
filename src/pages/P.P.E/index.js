@@ -86,7 +86,7 @@ function index(props) {
 
   return (
     <>
-      <NavBar text={'Overview'} logo={"/media/toggle.svg"}/>
+      
       <SubHeader />
       {/*P.P.E Violations start  */}
       <div className="container-fluid   ">

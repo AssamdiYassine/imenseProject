@@ -2,16 +2,19 @@
 
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
-import React, { useState } from "react";
+import React, { useState as UseState } from "react";
 import SVG from "react-inlinesvg";
 import { toAbsoluteUrl } from "helpers";
 import { Brand } from "components/brand/Brand";
 import Image from "react-bootstrap/Image";
+
 export function Aside(props) {
-  const [isOpen, setOpen] = useState(true);
-  const handelIsOPEN = () => {
-    setOpen(!isOpen);
-  };
+  // const [isOpen, setOpen] = UseState(true);
+  // const handelIsOPEN = () => {
+  //   setOpen(!isOpen);
+  // };
+  const {isOpen , add} =props
+ 
   return (
     <div
       id="kt_aside"
@@ -40,7 +43,7 @@ export function Aside(props) {
 
             <div
               className=" svg-icon   my-auto pr-3"
-              onClick={() => handelIsOPEN()}
+               onClick={() => add()}
             >
               <SVG src={toAbsoluteUrl("/media/toggle.svg")} />
             </div>
@@ -94,35 +97,34 @@ function MyNavLink({ link, svg, txt, isOpen }) {
       data-container="body"
       data-boundary="window"
     >
-    
-        <NavLink
-          to={`${link}`}
-          activeClassName="active"
-          className={`nav-link btn btn-icon   btn-lg  w-100  ${
-            isOpen ? "asideclient justify-content-start " : ""
-          }`}
-        >
-
-          {isOpen ? (
-            <div className="d-flex flex-nowrap text-nowrap   ">
-              {" "}
-              <span className="svg-icon svg-icon-lg svg-hover-black">
-                <SVG src={toAbsoluteUrl(svg)} />
-              </span>
-              <span className="px-2 text-center">{txt}</span>{" "}
-            </div>
-          ) : (
-            <OverlayTrigger
+      <NavLink
+        to={`${link}`}
+        activeClassName="active"
+        className={`nav-link btn btn-icon   btn-lg  w-100  ${
+          isOpen ? "asideclient justify-content-start " : ""
+        }`}
+      >
+        {isOpen ? (
+          <div className="d-flex flex-nowrap text-nowrap   ">
+            {" "}
+            <span className="svg-icon svg-icon-lg svg-hover-black">
+              <SVG src={toAbsoluteUrl(svg)} />
+            </span>
+            <span className="px-2 text-center">{txt}</span>{" "}
+          </div>
+        ) : (
+          <OverlayTrigger
             placement="right"
             overlay={<Tooltip id="latest-project">{txt}</Tooltip>}
           >
             <span className="svg-icon svg-icon-lg svg-hover-black">
               <SVG src={toAbsoluteUrl(svg)} />
             </span>
-            </OverlayTrigger>
-          )}
-        </NavLink>
-   
+          </OverlayTrigger>
+        )}
+      </NavLink>
     </li>
   );
 }
+
+ 

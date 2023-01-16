@@ -69,7 +69,7 @@ function index() {
   ]);
   return (
     <>
-      <NavBar text={"Clients Management"} />
+      
 
       {/*Clients Info start  */}
       <div className="container-fluid    ">

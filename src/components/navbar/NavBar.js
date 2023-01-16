@@ -4,14 +4,16 @@ import { toAbsoluteUrl } from "helpers";
 import SVG from "react-inlinesvg";
 import { Navbar, Nav } from "react-bootstrap";
 import Profil from "components/profil/profil";
-
+ 
 export function NavBar(props) {
   const [show, setShow] = UseState(false);
 
   const hide = (bool) => {
     setShow(bool);
   };
-  const { logo ,handeIsOPEN } = props;
+  const { logo ,add ,isOpen } = props;
+
+  console.log(props);
   return (
     <div
       id="kt_header"
@@ -23,9 +25,13 @@ export function NavBar(props) {
           className="header-menu-wrapper header-menu-wrapper-left d-flex"
         >
           <Navbar className="parentNav p-0" bg="white" expand="lg">
-          <div className=" svg-icon  d-flex  m-auto" aria-controls="basic-navbar-nav" onClick={()=> handeIsOPEN()}>
+          {isOpen === false ? 
+          <div className=" svg-icon  d-flex  m-auto" aria-controls="basic-navbar-nav" onClick={()=> add()}>
                   <SVG  src={toAbsoluteUrl(`${logo}`)}  className=" d-flex ml-1 align-items-center my-auto"/>
                 </div>
+              :null
+              
+              }
             {/* <Navbar.Toggle aria-controls="basic-navbar-nav" /> */}
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="mr-auto d-flex align-items-center">

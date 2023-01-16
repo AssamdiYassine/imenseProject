@@ -7,13 +7,24 @@ import { Aside } from "components/aside/Aside";
  
  
 import { toAbsoluteUrl } from "helpers";
+import { NavBar } from "components/navbar/NavBar";
 class Layout extends Component {
   constructor(props) {
     super(props);
     this.state = {
       loading: true,
+      isOpen: true
     };
   }
+
+
+  add = () => {
+    this.setState({
+      isOpen:!this.state.isOpen
+      
+    })
+  }
+
 
   componentDidMount() {
     this.setState({ loading: false });
@@ -66,7 +77,7 @@ class Layout extends Component {
           {/*begin::Page*/}
           <div className="d-flex flex-row flex-column-fluid page">
             
-              <Aside  />
+              <Aside  isOpen={this.state.isOpen} add={this.add} />
             
 
             {/*begin::Wrapper*/}
@@ -79,7 +90,12 @@ class Layout extends Component {
                 id="kt_content"
                 className={`content d-flex flex-column flex-column-fluid pt-0 `}
               >
-                
+              {routeName ==='PPE'&&  
+              <NavBar add={this.add}  isOpen={this.state.isOpen} text={'Overview'} logo={"/media/toggle.svg"}/>
+                 }
+                 {routeName ==='client'&& 
+                 <NavBar  add={this.add}  isOpen={this.state.isOpen}  text={"Clients Management"} logo={"/media/toggle.svg"}/>
+                }
                 {children}
                 
               </div>
