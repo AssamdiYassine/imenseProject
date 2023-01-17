@@ -54,7 +54,7 @@ export function Aside(props) {
         {/* begin::Nav Wrapper */}
         {/* Remove " flex-column-fluid "::To solve aside footer bottom padding */}
         <div
-          className={`aside-nav d-flex flex-column align-items-center py-5  ${
+          className={`aside-nav  d-flex flex-column align-items-center py-5  ${
             isOpen ? "w-250px " : "w-63px"
           } `}
         >
@@ -67,6 +67,7 @@ export function Aside(props) {
                 txt={"Clients"}
                 link="/client"
                 isOpen={isOpen}
+                
               />
 
               <MyNavLink
@@ -97,32 +98,42 @@ function MyNavLink({ link, svg, txt, isOpen }) {
       data-container="body"
       data-boundary="window"
     >
-      <NavLink
+    
+        {isOpen ? (
+          <NavLink
         to={`${link}`}
         activeClassName="active"
-        className={`nav-link btn btn-icon   btn-lg  w-100  ${
-          isOpen ? "asideclient justify-content-start " : ""
+        className={`nav-link btn   btn-clean  btn-lg  w-100  ${
+          isOpen ? "  justify-content-start " : ""
         }`}
       >
-        {isOpen ? (
-          <div className="d-flex flex-nowrap text-nowrap   ">
+          <div className="d-flex flex-nowrap text-nowrap  ">
             {" "}
-            <span className="svg-icon svg-icon-lg svg-hover-black">
+            <span className="svg-icon svg-icon-lg svg-hover-info">
               <SVG src={toAbsoluteUrl(svg)} />
             </span>
             <span className="px-2 text-center">{txt}</span>{" "}
           </div>
+          </NavLink>
         ) : (
+          <NavLink
+          to={`${link}`}
+          activeClassName="active"
+          className={`nav-link btn btn-icon btn-lg   w-100  ${
+            isOpen ? "asideclient justify-content-start " : null
+          }`}
+        >
           <OverlayTrigger
             placement="right"
             overlay={<Tooltip id="latest-project">{txt}</Tooltip>}
           >
-            <span className="svg-icon svg-icon-lg svg-hover-black">
+            <span className="svg-icon svg-icon-lg svg-hover-black  ">
               <SVG src={toAbsoluteUrl(svg)} />
             </span>
           </OverlayTrigger>
+          </NavLink>
         )}
-      </NavLink>
+ 
     </li>
   );
 }

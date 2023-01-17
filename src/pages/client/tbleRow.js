@@ -6,9 +6,13 @@ import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import { Switch } from "antd";
-import React from "react";
+import React,{useState as UseState} from "react";
 
 function row(props) {
+
+  const [event , setEvent]=UseState('')
+
+  
   return (
     <tr >
       <td className="align-middle  flex-nowrap text-nowrap"> {props.id}</td>
@@ -51,16 +55,16 @@ function row(props) {
       </td>
       <td className="align-middle  justify-content-center flex-nowrap text-nowrap  ">
         <div
-          className="border px-2 py-2 m-auto border-2  border-info"
+          className="border px-2 py-2 m-auto border-2  bordersubscription  "
           style={{
             borderRadius: 50,
             fontSize: 11,
             color: "#42A4DF",
-            borderColor: "#42A4DF",
+             
             width: "87px",
             height: "30px",
             borderWidth: 3,
-            borderColor: "#3699ff !important",
+             
           }}
         >
           {props.SubscriptionType}
@@ -83,7 +87,7 @@ function row(props) {
         ) : (
           <>
             {
-              (props.NextBill.DAY = 1 ? (
+              (props.NextBill.DAY === '1' ? (
                 <div
                   className={`btn px-3 py-1 text-white  `}
                   style={{
@@ -124,11 +128,13 @@ function row(props) {
       </td>
       <td className="align-middle flex-nowrap text-nowrap ">
         <Switch
-          className=" bg-success"
+ 
+          className={`${event ? 'bg-success' : 'bg-muted'}`}
           checkedChildren={"Active"}
           unCheckedChildren={"Inactive"}
-          defaultChecked
-        />{" "}
+           
+          onClick={(e)=> { setEvent(e)}}
+        />
       </td>
       <td className="align-middle ">
         <LongMenu />
